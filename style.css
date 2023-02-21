@@ -1,0 +1,341 @@
+html{
+    /* scroll-padding-top: 100px; */
+}
+
+:root{
+    --ff-body: 'Cambay', sans-serif;
+    --ff-primary-heading: 'Share Tech Mono', monospace;
+
+    --fw-regular: 400;
+    --fw-bold: 700; 
+
+    --fs-nav: 1rem;
+    --fs-primary-heading: 2.3rem;
+    --fs-secondary-heading: 1.8rem;
+    --fs-tertiary-heading: 1.5rem;
+    --fs-primary-heading-desc: 1.2rem;
+    --fs-scroll-to-top: 3rem;
+
+    --clr-body: hsl(230, 19%, 13%);
+    --clr-font: hsl(0, 0%, 100%);
+    --clr-headings: hsla(338, 91%, 60%, 1);
+    --clr-link-btn: hsl(338, 93%, 40%);
+    --clr-source-btn: hsl(338, 72%, 89%);
+    --clr-semi-light: var(--clr-headings);
+    --clr-light: hsl(338, 91%, 65%);
+    --clr-dark-blue: hsl(227, 11%, 16%);
+}
+
+
+
+::-webkit-scrollbar{
+    width: 1.5rem;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #872271, #a32678, #bf2b7d, #db3280, #f63c80);
+    border: 6px solid var(--clr-body);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+@supports(scrollbar-color: var(--clr-semi-light) transparent){
+    *{
+        scrollbar-color: var(--clr-semi-light) transparent;
+        scrollbar-width: thin;
+    }
+}
+
+body{
+    font-family: var(--ff-body);
+    background-color: var(--clr-body);
+    color: var(--clr-font);
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.link--hover{
+    position: relative;
+}
+
+.link--hover::after{
+    content: '';
+    position: absolute;
+    height: .3rem;
+    width: 0;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: var(--clr-semi-light);
+    border-radius: 5px;
+    transition: width ease-in-out .15s;
+}
+
+.link--hover:hover::after{
+    width: 100%;
+}
+
+.border--bottom{
+    position: relative;
+    width: max-content;
+}
+.border--bottom::before{
+    content: '';
+    position: absolute;
+    height: .3rem;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: var(--clr-semi-light);
+    border-radius: 5px;
+}
+
+/* header start */
+.header{
+    padding-block: 3rem;
+    margin-block-end: 4rem;
+
+}
+.nav{
+    font-size: var(--fs-nav);
+}
+
+.nav__menu{
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    padding: 0;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--clr-font);
+}
+
+/* .nav__link:hover{
+    transition: all ease-in-out .15s;
+    color: var(--clr-semi-light);
+} */
+/* header end */
+
+/* main start */
+/* section one start */
+.main{
+    margin-block-end: 8rem;
+}
+
+.section-one__wrapper{
+    display: grid;
+    justify-items: center;
+}
+
+.section-one{
+    margin-block-end: 8rem;
+}
+
+.section-one__flex--wrapper{
+    display: flex;
+    align-items: center;
+    margin-block-end: 1.3rem;
+}
+
+.section-one__hand-wave{
+    font-size: var(--fs-primary-heading);
+    margin-inline-end: .7rem;
+}
+
+.section-one__primary-heading{
+    font-family: var(--ff-primary-heading);
+    font-size: var(--fs-primary-heading);
+    color: var(--clr-headings);
+    position: relative;
+}
+
+.section-one__primary-heading::before,
+.section-one__primary-heading::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.section-one__primary-heading::before{
+    background-color: var(--clr-body);
+    animation: typewriter 1s 1s steps(16) forwards;
+}
+
+.section-one__primary-heading::after{
+    width: .5em;
+    background-color: var(--clr-light);
+    animation: typewriter 1s 1s steps(16) forwards,
+                pulse 1s ease-in-out infinite;
+}
+
+@keyframes typewriter{
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes pulse{
+    to{
+        background-color: transparent;
+    }
+}
+
+.section-one__desc{
+    font-size: var(--fs-primary-heading-desc);
+    margin-block-end: 1.5rem;
+}
+/* section one end */
+/* section two start */
+.section-two__wrapper{
+    display: grid;
+    justify-items: center;
+    gap: 3.8rem;
+}
+
+.secondary-heading{
+    font-size: var(--fs-secondary-heading);
+    color: var(--clr-headings);
+}
+
+.project{
+    max-width: 700px;
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-font);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.project__img{
+    display: none;
+}
+
+.project__secondary-heading{
+    font-size: var(--fs-tertiary-heading);
+    color: var(--clr-headings);
+    margin-block-end: 1rem;
+}
+
+.project__content{
+    margin-block-end: 1.1rem;
+}
+
+.project__flex--wrapper{
+    /* change padding */
+    margin-block-end: 1.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project__item{
+    border: 1px solid var(--clr-font);
+    border-radius: 5px;
+    padding-block-start: .3em;
+    padding-inline: .3em;
+    font-size: var(--fs-nav);
+}
+
+.project__source{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: var(--fs-nav);
+    font-weight: var(--fw-bold);
+}
+
+.project__link{
+    display: flex;
+    gap: .2em;
+    text-decoration: none;
+    padding-block-start: .7em;
+    padding-block-end: .5em;
+    padding-inline: 1.3em;
+    border-radius: 5px;
+}
+
+
+.link--live{
+    background-color: var(--clr-link-btn);
+    color: var(--clr-font);
+}
+
+.link--source{
+    background-color: var(--clr-source-btn);
+    color: var(--clr-body);
+}
+
+.project__source-icon{
+    width: 1em;
+    height: 1em;
+}
+/* section two start */
+/* main end */
+
+/* footer start */
+.footer{
+    padding-block-end: 3rem;
+}
+.footer__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.footer--margin{
+   
+    margin-block-end: 3rem;
+}
+
+.footer__flex--wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.footer__item{
+
+}
+
+.footer__link{
+    text-decoration: none;
+    color: var(--fs-nav);
+}
+/* footer end */
+
+.scroll-to-top{ 
+   position: fixed;
+   bottom: 4%;
+   right: 3%;
+}
+
+.scroll-to-top__img{
+    width: var(--fs-scroll-to-top);
+    opacity: .3;
+}
+
+@media (min-width: 600px) {
+    :root{
+        --fs-nav: 1.2rem;
+        --fs-primary-heading: 4.5rem;
+        --fs-secondary-heading: 1.8rem;
+        --fs-tertiary-heading: 1.5rem;
+        --fs-primary-heading-desc: 1.3rem;
+        --fs-scroll-to-top: 4rem;
+    }
+    .footer__flex--wrapper{
+        flex-direction: row;
+    }
+}
+
+
