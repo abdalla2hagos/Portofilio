@@ -266,7 +266,8 @@ body{
 
 .link--source{
     background-color: transparent;
-    outline: 1px solid var(--clr-headings);
+    outline: 2px solid var(--clr-headings);
+    outline-offset: -2px;
     color: var(--clr-font);
     transition: background-color ease-in-out .15s;
 }
