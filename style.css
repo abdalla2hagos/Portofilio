@@ -1,6 +1,3 @@
-html{
-    /* scroll-padding-top: 100px; */
-}
 
 :root{
     --ff-body: 'Cambay', sans-serif;
@@ -99,7 +96,7 @@ body{
 /* header start */
 .header{
     padding-block: 3rem;
-    margin-block-end: 4rem;
+    margin-block-end: 13rem;
 
 }
 .nav{
@@ -147,7 +144,7 @@ body{
 
 .section-one__hand-wave{
     font-size: var(--fs-primary-heading);
-    margin-inline-end: .7rem;
+    /* margin-inline-end: .7rem; */
 }
 
 .section-one__primary-heading{
@@ -155,6 +152,8 @@ body{
     font-size: var(--fs-primary-heading);
     color: var(--clr-headings);
     position: relative;
+    margin-inline-end: 3rem;
+
 }
 
 .section-one__primary-heading::before,
@@ -213,10 +212,6 @@ body{
     border-radius: 5px;
 }
 
-.project__img{
-    display: none;
-}
-
 .project__secondary-heading{
     font-size: var(--fs-tertiary-heading);
     color: var(--clr-headings);
@@ -229,6 +224,7 @@ body{
 
 .project__flex--wrapper{
     /* change padding */
+    font-family: 'Concert One', cursive;
     margin-block-end: 1.3rem;
     display: flex;
     flex-wrap: wrap;
@@ -239,8 +235,8 @@ body{
     border: 1px solid var(--clr-font);
     border-radius: 5px;
     padding-block-start: .3em;
-    padding-inline: .3em;
-    font-size: var(--fs-nav);
+    padding-block-end: .4em;
+    padding-inline: 1em;
 }
 
 .project__source{
@@ -263,13 +259,20 @@ body{
 
 
 .link--live{
-    background-color: var(--clr-link-btn);
+    background-color: var(--clr-headings);
     color: var(--clr-font);
+    padding-inline-end: 1.7em;
 }
 
 .link--source{
-    background-color: var(--clr-source-btn);
-    color: var(--clr-body);
+    background-color: transparent;
+    outline: 1px solid var(--clr-headings);
+    color: var(--clr-font);
+    transition: background-color ease-in-out .15s;
+}
+
+.link--source:hover{
+    background-color: var(--clr-headings);
 }
 
 .project__source-icon{
@@ -291,7 +294,6 @@ body{
 }
 
 .footer--margin{
-   
     margin-block-end: 3rem;
 }
 
@@ -301,10 +303,6 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 2.5rem;
-}
-
-.footer__item{
-
 }
 
 .footer__link{
@@ -336,6 +334,7 @@ body{
     .footer__flex--wrapper{
         flex-direction: row;
     }
+   
 }
 
 
